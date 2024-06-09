@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Accessory Challenge"
+      content="Samira is a front-end engineer based in Iran , she has a creative personality.Must-Have Accessory Challenge based in SheCode"
+    />
+    <title>Must-Have Accessory Challenge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: black;
+      }
+      .rowdies-light {
+        font-family: "Rowdies", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      .rowdies-regular {
+        font-family: "Rowdies", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .rowdies-bold {
+        font-family: "Rowdies", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      h1 {
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      .header {
+        background-position: center;
+        background-size: cover;
+        min-height: 70rem;
+        border-bottom-left-radius: 10rem;
+        border-bottom-right-radius: 10rem;
+      }
+      .container {
+        width: 100%;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+      }
+      .container-news {
+        width: 100%;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+        /* display: flex; */
+      }
+      .nav {
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 2.5rem 0;
+      }
+      .nav__wrapper {
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .nav__wrapper {
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .app-logo {
+        display: block;
+        width: 5.5rem;
+        height: 5.5rem;
+        margin-right: 4rem;
+      }
+      .menu {
+        display: flex;
+        list-style: none;
+        font-family: "Rowdies", sans-serif;
+        font-weight: 300;
+        font-size: 1rem;
+      }
+      .menu__item {
+        margin-right: 1.5rem;
+      }
+      .menu__link--active {
+        color: white;
+        position: relative;
+        z-index: 1;
+      }
+      .nav__link {
+        font-family: "Rowdies", sans-serif;
+        font-weight: 300;
+        font-size: 1rem;
+      }
+      .btn {
+        width: 16rem;
+        height: 2.5rem;
+        border-radius: 10rem;
+        cursor: pointer;
+        color: white;
+        background-color: #ce6d12;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Rowdies", sans-serif;
+        font-weight: 300;
+        font-size: 1rem;
+        border: 1px solid #ce6d12;
+        transition: all 100ms ease-in;
+        margin-top: 3rem;
+      }
+
+      .btn:hover {
+        color: #ce6d12;
+        background-color: black;
+        border: 1px solid #ce6d12;
+      }
+      .menu__link {
+        color: white;
+        -webkit-transition: color 100ms ease-in;
+        -o-transition: color 100ms ease-in;
+        transition: color 100ms ease-in;
+      }
+      .menu__link::after {
+        content: "";
+        border-bottom: 3px solid #ce6d12;
+        display: block;
+        transform: scaleX(0);
+        transition: transform 205ms ease-in-out;
+      }
+      .menu__link:hover::after {
+        transform: scaleX(1);
+      }
+      .nav_link {
+        color: white;
+        margin-left: 1.5rem;
+        font-family: "Rowdies", sans-serif;
+        font-weight: 300;
+        /* height: 5.5rem; */
+      }
+      .nav_link--border {
+        border: 1px solid white;
+        padding: 1rem 2.5rem;
+        border-radius: 10rem;
+        transition: all 150ms ease-in;
+      }
+      .newsletter {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        text-align: left;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: flex;
+      }
+      .wrapper-news {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      .newsletter__content {
+        padding-right: 2rem;
+        width: 35rem;
+      }
+      .newsletter__title {
+        margin-bottom: 0;
+        color: white;
+        font-size: 4rem;
+        font-family: "Rowdies", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .newsletter__banner {
+        -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+        color: white;
+      }
+      .newsletter__img {
+        /* width: 48%;
+        position: absolute;
+        right: 18rem;
+        bottom: -16rem; */
+        width: 48%;
+        height: 42rem;
+        position: absolute;
+        right: 16rem;
+        bottom: -10rem;
+        animation: scroll infinite 1s;
+        object-fit: contain;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateY(7px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .newsletter__caption {
+        color: white;
+        font-family: "Rowdies", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+      }
+      .btns-list {
+        color: white;
+        font-family: "Rowdies", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        margin-top: 1rem;
+        font-size: 1rem;
+        list-style: none;
+        position: absolute;
+        right: 0;
+      }
+      .btn-list {
+        /* border: 1px solid white; */
+        padding: 0.8rem 2.5rem;
+        border-radius: 1rem;
+        transition: background-image 150ms ease-in, border 150ms ease-in;
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+        background-image: linear-gradient(to right, #3b393e 60%, black);
+        margin-right: 1rem;
+      }
+      .btn-list:hover {
+        background-image: linear-gradient(to right, #ce6d12, #000);
+        border-color: #ce6d12;
+      }
+      .fa {
+        transition: none; /* Ensure no transition is applied to the icon */
+      }
+      /*nav btn hamberger*/
+      .nav__btn {
+        background-color: #fff;
+        width: 4.5rem;
+        height: 4.5rem;
+        margin-top: -2rem;
+        border-radius: 1.5rem;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+      .nav__btn-line {
+        display: block;
+        width: 3rem;
+        border-radius: 2rem;
+        height: 0.3rem;
+        background-color: #ce6d12;
+        position: relative;
+        cursor: pointer;
+        -webkit-transition: all 150ms ease-in-out;
+        -o-transition: all 150ms ease-in-out;
+        transition: all 150ms ease-in-out;
+      }
+      .nav__btn-line::before,
+      .nav__btn-line::after {
+        content: "";
+        position: absolute;
+        width: 3rem;
+        border-radius: 2rem;
+        height: 0.3rem;
+        background-color: #ce6d12;
+        -webkit-transition: all 200ms ease-in-out;
+        -o-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+      }
+      .nav__btn-line::before {
+        top: -9px;
+      }
+      .nav__btn-line::after {
+        top: 8px;
+      }
+      .nav__btn--open .nav__btn-line {
+        background-color: transparent;
+      }
+      .nav__btn--open .nav__btn-line::after {
+        /* -webkit-transform: translateY(-8px) rotate(-45deg);
+  -ms-transform: translateY(-8px) rotate(-45deg); */
+        transform: translateY(-8px) rotate(-45deg);
+      }
+      .nav__btn--open .nav__btn-line::before {
+        /* -webkit-transform: translateY(8px) rotate(45deg);
+  -ms-transform: translateY(8px) rotate(45deg); */
+        transform: translateY(8px) rotate(45deg);
+      }
+      .nav-menu {
+        position: fixed;
+        background-color: #3b393e;
+        top: 0;
+        left: -25rem;
+        bottom: 0;
+        width: 25rem;
+        padding: 2.5rem;
+        -webkit-transition: all 250ms ease-in-out;
+        -o-transition: all 250ms ease-in-out;
+        transition: all 250ms ease-in-out;
+        z-index: 10;
+      }
+      .nav-menu--open {
+        left: 0;
+      }
+      .nav-menu__title {
+        color: white;
+        font-family: "Rowdies", sans-serif;
+        font-size: 1.9rem;
+        border-bottom: 1px solid white;
+        padding: 1rem;
+        margin: 2rem;
+        text-align: center;
+      }
+      /*mobile menu*/
+      .mobile-menu {
+        margin-bottom: 3rem;
+        font-family: "Rowdies", sans-serif;
+      }
+      .mobile-menu__item {
+        margin-bottom: 1rem;
+      }
+      .mobile-menu__link {
+        color: white;
+        position: relative;
+        -webkit-transition: all 250ms ease-in-out;
+        -o-transition: all 250ms ease-in-out;
+        transition: all 250ms ease-in-out;
+      }
+      .mobile-menu__link::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0;
+        height: 0.3rem;
+        background-color: #ce6d12;
+        border-radius: 5rem;
+        -webkit-transition: all 250ms ease-in-out;
+        -o-transition: all 250ms ease-in-out;
+        transition: all 250ms ease-in-out;
+      }
+      .mobile-menu__link:hover {
+        padding-left: 2.2rem;
+      }
+      .mobile-menu__link:hover::before {
+        width: 1.6rem;
+      }
+      .nav-menu__links {
+        display: flex;
+      }
+      .nav-menu_link {
+        color: white;
+        border: 1px solid white;
+        display: block;
+        padding: 1rem;
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+        text-align: center;
+        -webkit-transition: all 100ms ease-in;
+        -o-transition: all 100ms ease-in;
+        transition: all 100ms ease-in;
+        font-family: "Rowdies", sans-serif;
+      }
+      .nav-menu_link:hover {
+        background-color: white;
+        color: #3b393e;
+      }
+      @media screen and (max-width: 1147px) {
+        .newsletter__img {
+          right: 10rem;
+        }
+      }
+      @media screen and (max-width: 993px) {
+        .nav__links {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 890px) {
+        .newsletter__img {
+          right: 5rem;
+        }
+        .newsletter__title {
+          font-size: 3rem;
+        }
+      }
+      @media screen and (max-width: 751px) {
+        .newsletter__img {
+          right: 16rem;
+          bottom: -34rem;
+        }
+        .wrapper-news {
+          flex-wrap: wrap;
+        }
+      }
+      @media screen and (max-width: 560px) {
+        .btns-list {
+          bottom: -15rem;
+        }
+        .wrapper-news {
+          margin-left: 4rem;
+        }
+        .newsletter__img {
+          right: 8rem;
+          bottom: -26rem;
+        }
+        .newsletter__caption {
+          font-size: 1rem;
+        }
+        .newsletter__title {
+          font-size: 2rem;
+        }
+        .menu {
+          display: none;
+        }
+        .nav-menu__title {
+          font-size: 1rem;
+          width: 8rem;
+        }
+        .nav-menu {
+          width: 14rem;
+        }
+      }
+      @media screen and (min-width: 560px) {
+        .nav__btn {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <div class="nav__wrapper">
+            <a href="#" class="app-logo">
+              <!-- <img
+                    src="./public/svgs/logo.svg"
+                    alt="camping web"
+                    class="app-logo_img"
+                  /> -->
+              <svg
+                class="app-logo_img"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+              >
+                <g transform="translate(0 -0.266)">
+                  <circle
+                    cx="25"
+                    cy="25"
+                    r="25"
+                    transform="translate(0 0.266)"
+                    fill="#c8650d"
+                  />
+                  <path
+                    d="M18.962-15.292a4.18,4.18,0,0,1-.3,1.237A3.231,3.231,0,0,1,17.951-13a3.642,3.642,0,0,1-1.139.756,5.089,5.089,0,0,1-1.6.373,7.131,7.131,0,0,1-1.757-.059q-.854-.137-1.7-.314t-1.678-.324A6.871,6.871,0,0,0,8.4-12.661a5.757,5.757,0,0,0-1.394.294,3.813,3.813,0,0,0-1.217.677,3.266,3.266,0,0,0-.854,1.119,3.674,3.674,0,0,0-.324,1.6,3.04,3.04,0,0,0,.236,1.227,4.13,4.13,0,0,0,.54.923,3.008,3.008,0,0,0,.579.579q.275.2.353.177a6.332,6.332,0,0,1-2.748.2A4.347,4.347,0,0,1,1.53-6.762,4.028,4.028,0,0,1,.313-8.46a4.731,4.731,0,0,1-.275-2.2,5.461,5.461,0,0,1,.638-2.12,5.239,5.239,0,0,1,1.355-1.6,6.385,6.385,0,0,1,1.953-1.031,8.462,8.462,0,0,1,2.434-.412,10.11,10.11,0,0,1,2.365.2q1.148.236,2.248.55t2.13.6a10.79,10.79,0,0,0,2.022.363,5.8,5.8,0,0,0,1.934-.167A4.707,4.707,0,0,0,18.962-15.292ZM7.93-9.343q.039-.118.147-.471a3.866,3.866,0,0,0,.147-.756,2.423,2.423,0,0,0-.049-.785.807.807,0,0,0-.422-.559q.393.02.471.02h.51a4.481,4.481,0,0,1,2.13.53,3.007,3.007,0,0,1,1.129,1.129,2.883,2.883,0,0,1,.353,1.384,3.964,3.964,0,0,1-.2,1.3L9.971-1.118Q9.932-1,9.824-.647a3.866,3.866,0,0,0-.147.756,2.423,2.423,0,0,0,.049.785.807.807,0,0,0,.422.559q-.393-.02-.471-.02h-.51A4.481,4.481,0,0,1,7.037.9,3.007,3.007,0,0,1,5.908-.225a2.883,2.883,0,0,1-.353-1.384,3.964,3.964,0,0,1,.2-1.3Z"
+                    transform="translate(15.989 32.095)"
+                    fill="#fff"
+                  />
+                </g>
+              </svg>
+            </a>
+            <ul class="menu">
+              <li class="menu__item">
+                <a href="#" class="menu__link menu__link--active">Feature</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Design</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Models</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Accesories</a>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-menu">
+            <h2 class="nav-menu__title">SOUNDS LIKE AN EPIPHANY</h2>
+            <ul class="mobile-menu">
+              <li class="mobile-menu__item">
+                <a href="#" class="mobile-menu__link">Feature</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#" class="mobile-menu__link">Models</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#" class="mobile-menu__link">Design</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#" class="mobile-menu__link">Accesories</a>
+              </li>
+            </ul>
+            <div class="nav-menu__links">
+              <a href="#" class="nav-menu_link">Sign up</a>
+              <a href="#" class="nav-menu_link nav-menu_link--border"
+                >Sign in</a
+              >
+            </div>
+          </div>
+          <div class="nav__links">
+            <a href="" class="nav_link">Login</a>
+            <a href="" class="nav_link nav_link--border">Sign up</a>
+          </div>
+          <div class="nav__btn">
+            <span class="nav__btn-line"></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="newsletter">
+      <div class="container-news">
+        <div class="wrapper-news">
+          <div class="newsletter__content">
+            <a href="#" class="btn">SOUNDS LIKE AN EPIPHANY</a>
+            <h2 class="newsletter__title">
+              Perfect balance <br />
+              of exhilarating <br />hight-fidelity <br />audio
+            </h2>
+            <p class="newsletter__caption">
+              Tip songs being discovered <br />
+              around the world right now
+            </p>
+          </div>
+
+          <div class="newsletter__banner">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/128/130/original/826867b5-0549-4682-89a7-f488f3a76e53.png?1717443174"
+              alt=""
+              class="newsletter__img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="btns-link">
+      <!-- <div class="container"> -->
+      <ul class="btns-list">
+        <li class="btn-list">
+          <i
+            class="fa fa-volume-down"
+            style="font-size: 24px; position: absolute; left: 44px"
+          ></i
+          >Spatial Audio With <br />
+          Dynamic Head Track
+        </li>
+        <li class="btn-list">
+          <i
+            class="fa fa-volume-off"
+            style="font-size: 24px; position: absolute; left: 44px"
+          ></i
+          >Active Noice<br />
+          Cancellation
+        </li>
+        <li class="btn-list">
+          <i
+            class="fa fa-volume-up"
+            style="font-size: 20px; position: absolute; left: 44px"
+          ></i
+          >Trancparency Mode
+        </li>
+      </ul>
+      <!-- </div> -->
+    </section>
+
+    <script>
+      const navBtn = document.querySelector(".nav__btn");
+      const navMenu = document.querySelector(".nav-menu");
+      let navOpen = false;
+      navBtn.addEventListener("click", function () {
+        if (navOpen) {
+          navBtn.classList.remove("nav__btn--open");
+          navMenu.classList.remove("nav-menu--open");
+          navOpen = false;
+        } else {
+          navBtn.classList.add("nav__btn--open");
+          navMenu.classList.add("nav-menu--open");
+          navOpen = true;
+        }
+      });
+    </script>
+  </body>
+</html>
